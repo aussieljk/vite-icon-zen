@@ -1,0 +1,50 @@
+{
+  "name": "vite-icon-zen",
+  "version": "0.1.0",
+  "description": "Generate favicons, apple-touch-icons, web manifest, and opengraph images from a single source icon",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node --external sharp && bun run build:types",
+    "build:types": "tsc --emitDeclarationOnly --declaration --outDir dist",
+    "prepublishOnly": "bun run build"
+  },
+  "peerDependencies": {
+    "vite": "^5.0.0 || ^6.0.0",
+    "sharp": ">=0.32.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0",
+    "sharp": "^0.33.0"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "favicon",
+    "icons",
+    "apple-touch-icon",
+    "manifest",
+    "webmanifest",
+    "opengraph",
+    "og-image",
+    "pwa"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aussieljk/vite-icon-zen"
+  }
+}
